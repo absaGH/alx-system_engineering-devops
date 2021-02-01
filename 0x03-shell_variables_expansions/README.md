@@ -1,0 +1,1 @@
+demonstrates the concept of Expansions, shell arithmetic, variables, shell initializatio files and alias command.
