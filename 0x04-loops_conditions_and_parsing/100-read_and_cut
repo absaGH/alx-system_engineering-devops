@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#  script that prints the content of the file /etc/passwd it only displays the:
+#   username
+#   group id
+#   Shell full path for the user
+
+while IFS= read -r LINE; do
+    echo "$LINE" | cut -d':' -f1,4,7
+done < /etc/passwd
