@@ -15,7 +15,7 @@ echo "Holberton School" | sudo tee /etc/nginx/html/index.html
 sudo touch /etc/nginx/html/404.html
 echo "Ceci n'est pas une page" |sudo tee /etc/nginx/html/404.html
 
-newlines="server {\n\tlisten 80;\n\tlisten [::]:80 default_server;\n\troot   /etc/nginx/html;\n\tindex  index.html index.htm;\n\n\tlocation /redirect_me {\n\t\treturn 301 http://cuberule.com/;\n\t}\n\terror_page 404 /404.html;\n\tlocation /404 {\n\t\troot /etc/nginx/html; \n\t\tinternal;\n\t}\n}"
+newlines="server {\n\tlisten 80;\n\tlisten [::]:80 default_server;\n\troot   /etc/nginx/html;\n\tindex  index.html index.htm;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\terror_page 404 /404.html;\n\tlocation /404 {\n\t\troot /etc/nginx/html; \n\t\tinternal;\n\t}\n}"
 sudo sed -i '14,$ d' /etc/nginx/sites-available/default
 sudo sed -i "$ a $newlines" /etc/nginx/sites-available/default
 
