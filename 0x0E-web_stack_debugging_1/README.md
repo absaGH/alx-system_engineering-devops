@@ -1,0 +1,2 @@
+# Web stack debugging #1
+The task in this project is debugging an Nginx installation by identifying what is preventing it from listening on port 80. Then, write a Bash script with the minimum nmber of commands to automate your fix. 

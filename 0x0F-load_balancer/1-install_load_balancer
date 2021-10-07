@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Insatalls the latest HAProxy version with configurations:
+#+    Enables management via the init script
+#+    Distributes requests using a round-robin algorithm
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+
+sudo sed -i "$ a\ENABLED=1" /etc/default/haproxy;
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
+sudo sed -i "$ a\listen hbnbapp\n\tbind 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 280-web-01 34.139.158.207:80 check\n\tserver 280-web-02 35.196.99.134:80 check" /etc/haproxy/haproxy.cfg
+
+sudo service haproxy start
+
